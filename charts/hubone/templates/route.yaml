@@ -1,0 +1,20 @@
+{{- if .Values.route.enabled -}}
+{{- $fullName := include "hubone.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+  kind: HTTPRoute
+  apiVersion: gateway.networking.k8s.io/v1beta1
+  metadata:
+    name: {{ $fullName }}
+  spec:
+    parentRefs:
+      - kind: Gateway
+        name: {{ .Values.route.parentrefs.name }}
+        namespace: {{ .Values.route.parentrefs.namespace }}
+
+    hostnames:
+      - {{ .Values.route.path }}
+    rules:
+      - backendRefs:
+          - name: {{ $fullName }}
+            port: {{ $svcPort }}
+{{- end }}

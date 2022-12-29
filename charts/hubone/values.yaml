@@ -33,6 +33,12 @@ service:
   port: 3000
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+route:
+  enabled: false
+  path: user.huboneapp.com
+  parentrefs:
+    name: "hubeon-gateway"
+    namespace: "default"
 
 ingress:
   enabled: true
@@ -42,7 +48,7 @@ ingress:
     argocd.argoproj.io/sync-wave: "3"
 
   hosts:
-    - host: user1.hubone.com
+    - host: user.huboneapp.com
       paths:
         - path: /
           pathType: Prefix
