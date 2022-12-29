@@ -16,5 +16,5 @@ spec:
   rules:
     - backendRefs:
         - name: {{ $fullName }}
-            port: {{ $svcPort }}
+          port: {{ $svcPort }}
 {{- end }}
