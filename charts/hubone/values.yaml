@@ -16,15 +16,6 @@ imagePullSecrets: []
 nameOverride: "hubone-app"
 fullnameOverride: "hubone-chart"
 
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: true
-  # Annotations to add to the service account
-  annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: "hubone"
-
 podAnnotations:
   argocd.argoproj.io/sync-wave: "2"
 
@@ -33,6 +24,7 @@ service:
   port: 3000
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+
 route:
   enabled: false
   path: user.huboneapp.com
