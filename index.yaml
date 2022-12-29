@@ -3,6 +3,16 @@ entries:
   hubone:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-12-29T03:29:39.493600789Z"
+    description: A Helm chart for HubOne
+    digest: 18a4e095318fc7dafc35a2f516dc9e49e3da83657cdbd8752ee6269e0ef8a923
+    name: hubone
+    type: application
+    urls:
+    - https://github.com/IhsenBouallegue/hubone-charts/releases/download/hubone-3.0.1/hubone-3.0.1.tgz
+    version: 3.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-12-29T03:20:21.160582899Z"
     description: A Helm chart for HubOne
     digest: f0fbd1f5cdbc32b06c9850c3c4865712f299c393e405ad23d4bded9a282984e5
@@ -71,4 +81,4 @@ entries:
     urls:
     - https://github.com/IhsenBouallegue/hubone-charts/releases/download/hubone-0.1.0/hubone-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-29T03:20:21.16123347Z"
+generated: "2022-12-29T03:29:39.493636689Z"
