@@ -29,7 +29,7 @@ route:
   enabled: false
   path: user.huboneapp.com
   parentrefs:
-    name: "hubeon-gateway"
+    name: "hubone-gateway"
     namespace: "default"
 
 ingress:
