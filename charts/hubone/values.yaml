@@ -50,23 +50,5 @@ postgresql:
     username: postgres
     password: postgres
     database: hubone
-  primary:
-    podSecurityContext:
-      enabled: false
-      fsGroup: ""
-    containerSecurityContext:
-      enabled: false
-      runAsUser: "auto"
-
-  readReplicas:
-    podSecurityContext:
-      enabled: false
-      fsGroup: ""
-    containerSecurityContext:
-      enabled: false
-      runAsUser: "auto"
-
   volumePermissions:
     enabled: true
-    securityContext:
-      runAsUser: "auto"
