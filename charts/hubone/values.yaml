@@ -10,20 +10,16 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
   env:
-    DATABASE_URL: postgresql://postgres:postgres@postgresql-service:5432/hubone
+    DATABASE_URL: postgresql://postgres:postgres@huboneapp-postgres:5432/hubone
 
 imagePullSecrets: []
-nameOverride: "hubone-app"
-fullnameOverride: "hubone-chart"
+nameOverride: "huboneapp"
+fullnameOverride: "huboneapp"
 
-podAnnotations:
-  argocd.argoproj.io/sync-wave: "2"
 
 service:
   type: NodePort
   port: 3000
-  annotations:
-    argocd.argoproj.io/sync-wave: "2"
 
 route:
   enabled: false
@@ -37,10 +33,8 @@ ingress:
   className: ""
   annotations:
     kubernetes.io/ingress.class: nginx
-    argocd.argoproj.io/sync-wave: "3"
-
   hosts:
-    - host: user.huboneapp.com
+    - host: user.hubone.com
       paths:
         - path: /
           pathType: Prefix
@@ -48,3 +42,31 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+postgresql:
+  fullnameOverride: huboneapp-postgres
+  auth:
+    postgresPassword: postgres
+    username: postgres
+    password: postgres
+    database: hubone
+  primary:
+    podSecurityContext:
+      enabled: false
+      fsGroup: ""
+    containerSecurityContext:
+      enabled: false
+      runAsUser: "auto"
+
+  readReplicas:
+    podSecurityContext:
+      enabled: false
+      fsGroup: ""
+    containerSecurityContext:
+      enabled: false
+      runAsUser: "auto"
+
+  volumePermissions:
+    enabled: false
+    securityContext:
+      runAsUser: "auto"

@@ -2,8 +2,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: hubone-schema-hook
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
 spec:
   ttlSecondsAfterFinished: 100
   template:
@@ -14,7 +12,7 @@ spec:
         imagePullPolicy: Always
         env:
           - name: DATABASE_URL
-            value: postgresql://postgres:postgres@postgresql-service:5432/hubone
+            value: {{ .Values.image.env.DATABASE_URL}}
         command: ["/bin/sh"]
         args: ["-c", "npx prisma migrate deploy | npx prisma db seed"]
       restartPolicy: Never
