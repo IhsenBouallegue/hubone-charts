@@ -3,6 +3,20 @@ entries:
   hubone:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-01-10T19:18:23.442651453Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.7
+    description: A Helm chart for HubOne
+    digest: dcb7aa584bd4030abb66f268a0910c17844765f4f919bfd4bb94c42c36302c81
+    name: hubone
+    type: application
+    urls:
+    - https://github.com/IhsenBouallegue/hubone-charts/releases/download/hubone-4.0.2/hubone-4.0.2.tgz
+    version: 4.0.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-01-10T19:09:36.698113225Z"
     dependencies:
     - name: postgresql
@@ -129,4 +143,4 @@ entries:
     urls:
     - https://github.com/IhsenBouallegue/hubone-charts/releases/download/hubone-0.1.0/hubone-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-10T19:09:36.698322737Z"
+generated: "2023-01-10T19:18:23.442858764Z"
