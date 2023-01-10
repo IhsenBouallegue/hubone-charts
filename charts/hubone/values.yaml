@@ -67,6 +67,6 @@ postgresql:
       runAsUser: "auto"
 
   volumePermissions:
-    enabled: false
+    enabled: true
     securityContext:
       runAsUser: "auto"
